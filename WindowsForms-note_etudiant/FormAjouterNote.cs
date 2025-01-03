@@ -15,8 +15,8 @@ namespace WindowsForms_note_etudiant
         private int note_math;
         private int note_francais;
         private int note_culture;
-
-       
+        private string prenom;
+        int MIN=0, MAX=100;
 
         public FormAjouterNote()
         {
@@ -37,17 +37,63 @@ namespace WindowsForms_note_etudiant
         {
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
         private void Enregistrer_information()
         {
-           this.note_math= int.Parse(textBox_note_math.Text);
-           this.note_francais= int.Parse(textBox_note_francais.Text);
-           this.note_culture= int.Parse(textBox_note_culture.Text);
-           
+            Notes_etudiants();
+            Prenom_etudiant();
 
         }
-        public int Note_math { get => note_math; private set => note_math = value; }
+        /// <summary>
+        /// Valide le prénom de l'étudiant
+        /// </summary>
+        private void Prenom_etudiant()
+        {
+            if(string.IsNullOrEmpty(textBox_prenom_etud.Text))
+            {
+                MessageBox.Show("Vous devez inscrire un prenom");
+            }
+            else
+            {
+                this.prenom = textBox_prenom_etud.Text;
+            }
+        }
+        /// <summary>
+        /// Valide les notes des étudiants
+        /// </summary>
+        private void Notes_etudiants()
+        {
+            try
+            {
+                this.note_math = int.Parse(textBox_note_math.Text);
+                this.note_francais = int.Parse(textBox_note_francais.Text);
+                this.note_culture = int.Parse(textBox_note_culture.Text);
+                if(this.note_culture<MIN || this.note_culture>100)
+                {
+                    throw new NoteValideException(this.note_culture,MIN,MAX);
+                }
+            }
+            catch (System.FormatException)
+            {
+                MessageBox.Show("Vous devez inscrire des chiffres pour les notes");
+            }
+            catch(NoteValideException e)
+            {
+                MessageBox.Show($"{e.Message}");
+            }
+        }
+        public int Note_math
+        {
+            get => note_math; 
+            private set
+            {
+                note_math = value;
+            }
+        }
         public int Note_francais { get => note_francais; private set => note_francais = value; }
         public int Note_culture { get => note_culture; private set => note_culture = value; }
-
+        public string Prenom { get => prenom; set => prenom = value; }
     }
 }
