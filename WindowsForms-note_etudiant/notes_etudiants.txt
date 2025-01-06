@@ -1,1 +1,2 @@
-﻿Prénom,Note en mathématique,Note en français,Note en culture
+Numéro d'identification,Prénom,Note en mathématique,Note en français,Note en culture123456,jo,70,82,65234111,marc,122,56,0234111,marc,122,56,75
+234111,marc,63,56,75

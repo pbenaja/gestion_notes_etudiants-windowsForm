@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enregistrement.cs" />
+    <Compile Include="GestionDonnees.cs" />
     <Compile Include="FormAjouterNote.cs">
       <SubType>Form</SubType>
     </Compile>
