@@ -40,8 +40,8 @@ namespace WindowsForms_note_etudiant
         public void Enregistrer()
         {
             string fichier = ChargerDonnees();
-            StreamWriter streamWriter = new StreamWriter(this.chemin);
-            streamWriter.WriteLine(fichier);
+            StreamWriter streamWriter = new StreamWriter(this.Chemin);
+            streamWriter.Write(fichier);
             streamWriter.WriteLine($"{this.Num_id},{this.Prenom},{this.Note_math},{this.Note_francais},{this.Note_culture}");
             streamWriter.Close();
         }
@@ -51,13 +51,10 @@ namespace WindowsForms_note_etudiant
         /// <returns>Les données du fichier</returns>
         public string ChargerDonnees()
         {
-            string fichier = "";
-            StreamReader streamReader = new StreamReader(this.chemin);
-            while(!streamReader.EndOfStream)
-            {
-                fichier += streamReader.ReadLine();
-            }
-            streamReader.Close();
+            //string fichier = "";
+            string e = "";
+            //StreamReader streamReader = new StreamReader(this.Chemin);
+            string fichier = File.ReadAllText(this.Chemin);
             return fichier;
         }
 
