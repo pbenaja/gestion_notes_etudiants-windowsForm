@@ -2,3 +2,6 @@ Numero d'identification,Prenom,Note en mathematique,Note en francais,Note en cul
 234111,marc,63,56,75
 324344,ima,78,92,67
 245122,jean,67,87,94
+123459,zach,76,82,89
+245678,ben,90,89,91
+122333,julie,67,71,74

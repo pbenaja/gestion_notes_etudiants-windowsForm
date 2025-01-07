@@ -51,9 +51,6 @@ namespace WindowsForms_note_etudiant
         /// <returns>Les données du fichier</returns>
         public string ChargerDonnees()
         {
-            //string fichier = "";
-            string e = "";
-            //StreamReader streamReader = new StreamReader(this.Chemin);
             string fichier = File.ReadAllText(this.Chemin);
             return fichier;
         }

@@ -18,6 +18,7 @@ namespace WindowsForms_note_etudiant
         private string prenom;
         private int num_id;
         int MIN=0, MAX=100;
+        bool probleme_resolue=false;
 
         public FormAjouterNote()
         {
@@ -35,11 +36,14 @@ namespace WindowsForms_note_etudiant
         /// <param name="e"></param>
         private void bouton_enregistrer_Click(object sender, EventArgs e)
         {
-            Notes_etudiants();
             Identification();
-            GestionDonnees donnees=new GestionDonnees(this.Prenom, this.Note_math,this.Note_francais,
-            this.Note_culture,this.Num_id);
-            donnees.Enregistrer();
+            Notes_etudiants();
+            if(probleme_resolue)
+            {
+                GestionDonnees donnees = new GestionDonnees(this.Prenom, this.Note_math, this.Note_francais,
+                this.Note_culture, this.Num_id);
+                donnees.Enregistrer();
+            }
 
         }
         private void bouton_renitialiser_Click(object sender, EventArgs e)
@@ -53,23 +57,27 @@ namespace WindowsForms_note_etudiant
         {
             try
             {
+                this.num_id = int.Parse(textBox_id.Text);
                 if (string.IsNullOrEmpty(textBox_prenom_etud.Text))
                 {
                     MessageBox.Show("Vous devez inscrire le prénom de l'étudiant");
+                    
                 }
                 if(textBox_id.Text.Length!=6)
                 {
                     MessageBox.Show("Vous devez inscrire 6 chiffes pour le numéro d'identification");
                 }
-                else
+                if(textBox_id.Text.Length == 6 && !string.IsNullOrEmpty(textBox_prenom_etud.Text))  
                 {
-                    this.num_id = int.Parse(textBox_id.Text);
+                    
                     this.prenom = textBox_prenom_etud.Text.ToLower();
+                    probleme_resolue=true;
                 }
             }
             catch(System.FormatException)
             {
                 MessageBox.Show("Vous devez inscrire uniquement des chiffes");
+                probleme_resolue = false;
             }
         }
         /// <summary>
@@ -101,6 +109,7 @@ namespace WindowsForms_note_etudiant
                 textBox_note_culture.Text = string.Empty;
                 textBox_note_francais.Text = string.Empty;
                 textBox_note_math.Text = string.Empty;
+                probleme_resolue=false;
 
             }
             catch(NoteValideException e)
@@ -109,6 +118,7 @@ namespace WindowsForms_note_etudiant
                 textBox_note_culture.Text = string.Empty;
                 textBox_note_francais.Text = string.Empty;
                 textBox_note_math.Text = string.Empty;
+                probleme_resolue = false;
             }
         }
         private void Renitialiser()
