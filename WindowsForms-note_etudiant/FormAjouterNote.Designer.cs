@@ -77,7 +77,6 @@
             this.label4.Size = new System.Drawing.Size(129, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Prenom de l\'étudiant";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox_note_math
             // 

@@ -23,5 +23,12 @@ namespace WindowsForms_note_etudiant
             formAjouterNote.MdiParent= this;
             formAjouterNote.Show();
         }
+
+        private void afficherLesPourcentagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAfficherPourcentage formAfficherPourcentage=new FormAfficherPourcentage();
+            formAfficherPourcentage.MdiParent= this;
+            formAfficherPourcentage.Show();
+        }
     }
 }

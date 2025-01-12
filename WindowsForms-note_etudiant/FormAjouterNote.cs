@@ -24,13 +24,9 @@ namespace WindowsForms_note_etudiant
         {
             InitializeComponent();
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
         /// <summary>
-        /// Enregistre les informations quand le bouton "enregistrer est appuyé"
+        /// Enregistre les informations quand le bouton "enregistrer est appuyé" et si et seulement 
+        /// si toutes les erreurs ont été résolues
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -38,14 +34,27 @@ namespace WindowsForms_note_etudiant
         {
             Identification();
             Notes_etudiants();
-            if(probleme_resolue)
+            GestionDonnees donnees = new GestionDonnees(this.Prenom, this.Note_math, this.Note_francais,
+            this.Note_culture, this.Num_id);
+            bool Id_utiliser=donnees.VerifierId();
+            donnees.ChargerPourcentages();
+            if (!Id_utiliser && probleme_resolue)
             {
-                GestionDonnees donnees = new GestionDonnees(this.Prenom, this.Note_math, this.Note_francais,
-                this.Note_culture, this.Num_id);
                 donnees.Enregistrer();
+                MessageBox.Show("Enregistrement effectué avec succès");
+                Renitialiser();
+            }
+            if(Id_utiliser)
+            {
+                MessageBox.Show("Le numéro d'identifiant choisi correspond à un autre étudiant");
             }
 
         }
+        /// <summary>
+        /// Appelle la fonction "Renitialiser" lorsqu'on clique sur le bouton "Rénitialiser"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bouton_renitialiser_Click(object sender, EventArgs e)
         {
             Renitialiser();
@@ -121,6 +130,9 @@ namespace WindowsForms_note_etudiant
                 probleme_resolue = false;
             }
         }
+        /// <summary>
+        /// Rénitialise toutes les informations
+        /// </summary>
         private void Renitialiser()
         {
             textBox_id.Text = string.Empty;

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAfficherPourcentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAfficherPourcentage.Designer.cs">
+      <DependentUpon>FormAfficherPourcentage.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionDonnees.cs" />
     <Compile Include="FormAjouterNote.cs">
       <SubType>Form</SubType>
@@ -62,6 +68,9 @@
     <Compile Include="NoteValideException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAfficherPourcentage.resx">
+      <DependentUpon>FormAfficherPourcentage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjouterNote.resx">
       <DependentUpon>FormAjouterNote.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="notes_etudiants.txt" />
+    <Content Include="Pourcentage_etudiants.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

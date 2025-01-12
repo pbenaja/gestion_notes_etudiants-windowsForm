@@ -5,3 +5,7 @@ Numero d'identification,Prenom,Note en mathematique,Note en francais,Note en cul
 123459,zach,76,82,89
 245678,ben,90,89,91
 122333,julie,67,71,74
+122337,po,29,48,52
+122397,junior,48,54,62
+452134,jacob,62,49,67
+234166,thomas,43,59,61
