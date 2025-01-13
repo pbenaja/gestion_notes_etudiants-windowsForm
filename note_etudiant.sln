@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms-note_etudiant", "WindowsForms-note_etudiant\WindowsForms-note_etudiant.csproj", "{F2BA6D12-D9BA-497E-BA71-4A474A987149}"
 EndProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "�
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms-note_etudiantTests", "WindowsForms-note_etudiantTests1\WindowsForms-note_etudiantTests.csproj", "{E5549C5B-AF3E-4211-8BB8-F17677BB9D85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{F2BA6D12-D9BA-497E-BA71-4A474A987149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2BA6D12-D9BA-497E-BA71-4A474A987149}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2BA6D12-D9BA-497E-BA71-4A474A987149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5549C5B-AF3E-4211-8BB8-F17677BB9D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5549C5B-AF3E-4211-8BB8-F17677BB9D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5549C5B-AF3E-4211-8BB8-F17677BB9D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5549C5B-AF3E-4211-8BB8-F17677BB9D85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

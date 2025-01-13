@@ -1,1 +1,11 @@
-﻿
+Id: 234111,Prenom: marc,Pourcentage :64.00%
+Id: 324344,Prenom: ima,Pourcentage :79.00%
+Id: 245122,Prenom: jean,Pourcentage :82.00%
+Id: 123459,Prenom: zach,Pourcentage :82.00%
+Id: 245678,Prenom: ben,Pourcentage :90.00%
+Id: 122333,Prenom: julie,Pourcentage :70.00%
+Id: 122337,Prenom: po,Pourcentage :43.00%
+Id: 122397,Prenom: junior,Pourcentage :54.00%
+Id: 452134,Prenom: jacob,Pourcentage :59.00%
+Id: 234166,Prenom: thomas,Pourcentage :54.00%
+Id: 777811,Prenom: maria,Pourcentage :93.00%

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +15,11 @@ namespace WindowsForms_note_etudiant
         private int note_math;
         private int note_francais;
         private int note_culture;
-        private string chemin_donnees;
-        private string chemin_pourcentages;
         private int num_id;
+        string chemin_donnees = "C:\\Users\\bppch\\Documents\\prog_c#\\note_etudiant" +
+        "\\WindowsForms-note_etudiant\\notes_etudiants.txt";
+        string chemin_pourcentages = "C:\\Users\\bppch\\Documents\\prog_c#\\note_etudiant\\" +
+         "WindowsForms-note_etudiant\\Pourcentage_etudiants.txt";
         /// <summary>
         /// Initialise les informations essentielles à enregistrer
         /// </summary>
@@ -32,31 +35,20 @@ namespace WindowsForms_note_etudiant
             this.Note_francais = note_francais;
             this.Note_culture = note_culture;
             this.Num_id = num_id;
-            this.chemin_donnees= "C:\\Users\\bppch\\Documents\\prog_c#\\note_etudiant" +
-            "\\WindowsForms-note_etudiant\\notes_etudiants.txt";
-            this.chemin_pourcentages = "C:\\Users\\bppch\\Documents\\prog_c#\\note_etudiant\\" +
-             "WindowsForms-note_etudiant\\Pourcentage_etudiants.txt";
         }
         /// <summary>
         /// Enregistre les informations dans un fichier texte
         /// </summary>
-        public void Enregistrer()
+        public void EnregistrerDonnees()
         {
-            string fichier = ChargerDonnees();
-            StreamWriter streamWriter = new StreamWriter(this.chemin_donnees);
+            OperationsDeDonnees operations = new OperationsDeDonnees();
+            string fichier = operations.ChargerDonnees(chemin_donnees);
+            StreamWriter streamWriter = new StreamWriter(chemin_donnees);
             streamWriter.Write(fichier);
             streamWriter.WriteLine($"{this.Num_id},{this.Prenom},{this.Note_math},{this.Note_francais},{this.Note_culture}");
             streamWriter.Close();
         }
-        /// <summary>
-        /// Récupère les données présentes dans le fichier de note
-        /// </summary>
-        /// <returns>Les données du fichier</returns>
-        public string ChargerDonnees()
-        {
-            string donnees = File.ReadAllText(this.chemin_donnees);
-            return donnees;
-        }
+
         /// <summary>
         /// Vérifie si le numéro d'identification inscrit est déjà attribué
         /// à une autre personne
@@ -64,46 +56,11 @@ namespace WindowsForms_note_etudiant
         /// <returns>vrai ou faux</returns>
         public bool VerifierId()
         {
-            string fichier=ChargerDonnees();
+            OperationsDeDonnees operations = new OperationsDeDonnees();
+            string fichier=operations.ChargerDonnees(chemin_donnees);
             bool present = fichier.Contains(this.Num_id.ToString());
             return present;
         }
-        /// <summary>
-        /// Calcule les pourcentages de tous les étudiants du fichier
-        /// </summary>
-        public void CalculerPourcGen()
-        {
-            string[] donnees=File.ReadAllLines(this.chemin_donnees);
-            string[] temporaire = new string[5];
-            int note_math = 0;
-            int note_francais = 0;
-            int note_culture = 0;
-            string pourcentage = "";
-           
-            for (int i=1;i<donnees.Length;i++)
-            {
-                temporaire = donnees[i].Trim().Split(',');
-                note_math = int.Parse(temporaire[2]);
-                note_francais= int.Parse(temporaire[3]);
-                note_culture = int.Parse(temporaire[4]);
-                pourcentage=CalculerPourcentage(note_math,note_francais,note_culture).ToString("F2");
-            }
-        }
-        /// <summary>
-        /// Charge les pourcentages des étudiants contenu dans le fichier du pourcentage
-        /// </summary>
-        /// <returns>les pourcentages des étudiants</returns>
-        public string ChargerPourcentages()
-        {
-            string pourcentages=File.ReadAllText(this.chemin_pourcentages);
-            return pourcentages;
-        }
-        private double CalculerPourcentage(int nb1,int nb2,int nb3)
-        {
-            double pourcentage = (nb1 + nb2 + nb2 + nb3) / 3;
-            return pourcentage;
-        }
-
 
         public string Prenom { get => prenom; private set => prenom = value; }
         public int Note_math { get => note_math; private set => note_math = value; }

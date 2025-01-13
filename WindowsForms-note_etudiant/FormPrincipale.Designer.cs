@@ -32,8 +32,6 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterLesNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afficherLesPourcentagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.généralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.individuelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,25 +64,10 @@
             // 
             // afficherLesPourcentagesToolStripMenuItem
             // 
-            this.afficherLesPourcentagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.généralToolStripMenuItem,
-            this.individuelToolStripMenuItem});
             this.afficherLesPourcentagesToolStripMenuItem.Name = "afficherLesPourcentagesToolStripMenuItem";
             this.afficherLesPourcentagesToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.afficherLesPourcentagesToolStripMenuItem.Text = "Afficher les pourcentages";
             this.afficherLesPourcentagesToolStripMenuItem.Click += new System.EventHandler(this.afficherLesPourcentagesToolStripMenuItem_Click);
-            // 
-            // généralToolStripMenuItem
-            // 
-            this.généralToolStripMenuItem.Name = "généralToolStripMenuItem";
-            this.généralToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.généralToolStripMenuItem.Text = "Général";
-            // 
-            // individuelToolStripMenuItem
-            // 
-            this.individuelToolStripMenuItem.Name = "individuelToolStripMenuItem";
-            this.individuelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.individuelToolStripMenuItem.Text = "Individuel";
             // 
             // FormPrincipale
             // 
@@ -109,8 +92,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterLesNotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem afficherLesPourcentagesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem généralToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem individuelToolStripMenuItem;
     }
 }
 

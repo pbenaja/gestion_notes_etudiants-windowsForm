@@ -66,6 +66,7 @@
       <DependentUpon>FormPrincipale.cs</DependentUpon>
     </Compile>
     <Compile Include="NoteValideException.cs" />
+    <Compile Include="OperationsDeDonnees.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAfficherPourcentage.resx">

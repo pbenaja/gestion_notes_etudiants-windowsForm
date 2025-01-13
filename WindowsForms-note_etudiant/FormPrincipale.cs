@@ -30,5 +30,10 @@ namespace WindowsForms_note_etudiant
             formAfficherPourcentage.MdiParent= this;
             formAfficherPourcentage.Show();
         }
+
+        private void generalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

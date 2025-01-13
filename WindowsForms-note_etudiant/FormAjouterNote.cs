@@ -37,10 +37,9 @@ namespace WindowsForms_note_etudiant
             GestionDonnees donnees = new GestionDonnees(this.Prenom, this.Note_math, this.Note_francais,
             this.Note_culture, this.Num_id);
             bool Id_utiliser=donnees.VerifierId();
-            donnees.ChargerPourcentages();
             if (!Id_utiliser && probleme_resolue)
             {
-                donnees.Enregistrer();
+                donnees.EnregistrerDonnees();
                 MessageBox.Show("Enregistrement effectué avec succès");
                 Renitialiser();
             }

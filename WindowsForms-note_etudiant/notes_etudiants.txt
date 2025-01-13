@@ -9,3 +9,4 @@ Numero d'identification,Prenom,Note en mathematique,Note en francais,Note en cul
 122397,junior,48,54,62
 452134,jacob,62,49,67
 234166,thomas,43,59,61
+777811,maria,96,91,94
